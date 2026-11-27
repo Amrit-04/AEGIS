@@ -1,24 +1,24 @@
 :root {
   color-scheme: dark;
-  --bg: #061018;
-  --bg-raised: #0a1722;
-  --panel: rgba(11, 26, 38, 0.9);
-  --panel-solid: #0b1a26;
-  --line: rgba(151, 188, 204, 0.14);
-  --line-strong: rgba(151, 188, 204, 0.26);
-  --text: #eaf4f7;
-  --muted: #93aab6;
-  --muted-dim: #6f8794;
-  --amber: #ffb454;
-  --amber-soft: rgba(255, 180, 84, 0.14);
-  --cyan: #5eead4;
-  --cyan-soft: rgba(94, 234, 212, 0.12);
-  --green: #43e3b0;
-  --rose: #ff667f;
-  --shadow: 0 24px 70px rgba(0, 0, 0, 0.34);
-  --font: "Segoe UI", "SF Pro Text", -apple-system, BlinkMacSystemFont, sans-serif;
-  --display: "Segoe UI Semibold", "SF Pro Display", -apple-system, sans-serif;
-  --mono: "Cascadia Code", "SFMono-Regular", Consolas, monospace;
+  --bg: #03070a;
+  --bg-raised: #050d14;
+  --panel: rgba(6, 17, 26, 0.94);
+  --panel-solid: #06111a;
+  --line: rgba(180, 210, 230, 0.08);
+  --line-strong: rgba(180, 210, 230, 0.16);
+  --text: #f0f7f9;
+  --muted: #a0b6c6;
+  --muted-dim: #708696;
+  --amber: #f59e0b;
+  --amber-soft: rgba(245, 158, 11, 0.1);
+  --cyan: #22d3ee;
+  --cyan-soft: rgba(34, 211, 238, 0.1);
+  --green: #10b981;
+  --rose: #f43f5e;
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --display: "Inter", "General Sans", sans-serif;
+  --mono: "JetBrains Mono", "Fira Code", monospace;
 }
 
 * {
@@ -36,12 +36,11 @@ body {
   min-height: 100vh;
   font-family: var(--font);
   color: var(--text);
-  background:
-    radial-gradient(950px 540px at 12% -15%, rgba(19, 115, 124, 0.24), transparent 65%),
-    radial-gradient(700px 420px at 93% 1%, rgba(255, 180, 84, 0.07), transparent 66%),
-    linear-gradient(180deg, #07131d 0%, #061018 48%, #050d14 100%);
+  background-color: var(--bg);
+  background-image: 
+    radial-gradient(circle at 15% 15%, rgba(34, 211, 238, 0.03), transparent 40%),
+    radial-gradient(circle at 85% 85%, rgba(245, 158, 11, 0.03), transparent 40%);
   -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
 }
 
 button,
@@ -88,11 +87,12 @@ p {
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  min-height: 72px;
-  padding: 12px clamp(16px, 3vw, 38px);
+  min-height: 64px;
+  padding: 0 clamp(16px, 3vw, 38px);
   border-bottom: 1px solid var(--line);
-  background: rgba(5, 14, 22, 0.64);
-  backdrop-filter: blur(14px);
+  background: rgba(3, 7, 10, 0.8);
+  backdrop-filter: blur(12px);
+  z-index: 100;
 }
 
 .brand {
@@ -307,8 +307,8 @@ p {
   min-height: 0;
   overflow: hidden;
   border: 1px solid var(--line);
-  border-radius: 14px;
-  background: #07131d;
+  border-radius: 12px;
+  background: var(--bg-raised);
   box-shadow: var(--shadow);
   position: relative;
 }
@@ -493,12 +493,11 @@ p {
 
 .panel {
   border: 1px solid var(--line);
-  border-radius: 14px;
-  background:
-    linear-gradient(160deg, rgba(18, 40, 54, 0.52), rgba(9, 21, 31, 0.2) 45%),
-    var(--panel);
-  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.19);
-  padding: 16px;
+  border-radius: 12px;
+  background: var(--panel);
+  backdrop-filter: blur(16px);
+  box-shadow: var(--shadow);
+  padding: 20px;
 }
 
 .panel-heading {

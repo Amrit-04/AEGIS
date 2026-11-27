@@ -212,17 +212,29 @@ function drawRoute(
 ): void {
   context.lineCap = 'round';
   context.lineJoin = 'round';
+
+  // Outer glow aura
   traceRoute(context, graph, path, scale, offsetX, offsetY);
-  context.strokeStyle = rgba(accent, 0.18);
-  context.lineWidth = 11;
+  context.strokeStyle = rgba(accent, 0.22);
+  context.lineWidth = Math.min(24, Math.max(12, scale * 28));
   context.stroke();
+
+  // Medium pulse glow
+  traceRoute(context, graph, path, scale, offsetX, offsetY);
+  context.strokeStyle = rgba(accent, 0.45);
+  context.lineWidth = Math.min(12, Math.max(6, scale * 14));
+  context.stroke();
+
+  // Bright core path
   traceRoute(context, graph, path, scale, offsetX, offsetY);
   context.strokeStyle = rgba(accent, 1);
-  context.lineWidth = 2.6;
+  context.lineWidth = Math.min(5, Math.max(2.5, scale * 5));
   context.stroke();
+
+  // High-intensity center highlight
   traceRoute(context, graph, path, scale, offsetX, offsetY);
-  context.strokeStyle = 'rgba(255, 255, 255, 0.58)';
-  context.lineWidth = 0.8;
+  context.strokeStyle = '#ffffff';
+  context.lineWidth = Math.min(2, Math.max(1, scale * 2));
   context.stroke();
 }
 

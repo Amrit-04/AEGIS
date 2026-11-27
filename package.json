@@ -1,0 +1,25 @@
+{
+  "name": "aegis",
+  "private": true,
+  "version": "0.2.0",
+  "type": "module",
+  "description": "AEGIS - browser-native urban evacuation and emergency logistics optimizer",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "generate:preset": "node data/generate-preset.mjs"
+  },
+  "dependencies": {
+    "preact": "^11.2.0"
+  },
+  "devDependencies": {
+    "@preact/preset-vite": "^2.10.6",
+    "@types/node": "^26.6.11",
+    "typescript": "^7.0.2",
+    "vite": "^8.4.0",
+    "vitest": "^5.1.2"
+  }
+}
